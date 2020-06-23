@@ -15,10 +15,17 @@ let mostPopularFood = [
 
 const fixList = (arr, first, last) => {
   arr.unshift(first);
-  arr[9] = last;
+  arr.pop();
+  arr.push(last);
   return arr;
 };
 
-console.log(
+const printList = (arr) => {
+  arr.forEach((element) => {
+    console.log(`${arr.indexOf(element) + 1}. ${element}`);
+  });
+};
+
+printList(
   fixList(mostPopularFood, "bean burritos", "buffalo-flavored cauliflower")
 );
