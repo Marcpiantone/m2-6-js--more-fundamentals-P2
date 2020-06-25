@@ -17,10 +17,11 @@ const people = [
 // Write a function that returns the average age of the `people` array.
 
 function avgAge(peopleArr) {
-  const ageAverage = peopleArr.map((obj) => {
-    return obj.values.age;
+  let sum = 0;
+  peopleArr.forEach((people) => {
+    return (sum += people.age);
   });
-  return console.log(ageAverage);
+  return sum / peopleArr.length;
 }
 
 console.log(`Average age is ${avgAge(people)}.`);
